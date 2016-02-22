@@ -1,0 +1,50 @@
+<div class="container">
+
+<!--  <div class="jumbotron text-center" ng-prueba>
+    <h1>Nº de Registros: <span class="label label-success">{{ carowners.length }}</span></h1>
+  </div>
+-->
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-1 text-center">
+      <form name="newTravelForm">
+        <div class="form-group">
+
+        <!--  <input type="text" class="form-control input-lg text-center" placeholder="Car Owner" ng-model="newTravel.carOwner" required>
+          <br>
+          <input type="text" class="form-control input-lg text-center" placeholder="Surname" ng-model="newTravel.surname" required>
+          <br>-->
+          <input type="text" class="form-control input-lg text-center" placeholder="Aviable Seats" ng-model="newTravel.seats" required>
+          <br>
+          <input type="text" class="form-control input-lg text-center" placeholder="Origin" ng-model="newTravel.origin" required>
+          <br>
+          <input type="text" class="form-control input-lg text-center" placeholder="Destination" ng-model="newTravel.destination" required>
+        </div>
+
+        <!-- Acciones que podemos realizar en el formulario -->
+        <button type="submit" class="btn btn-success btn-lg" ng-click="addTravel()" ng-disabled="newTravelForm.$invalid || selected">Registrar</button>
+        <button type="submit" class="btn btn-warning btn-lg" ng-click="modificarCarOwner(newCarOwner)" ng-disabled="!newTravel.seats || !newTravel.origin || !newTravel.destination || !selected">Modificar</button>
+        <button type="submit" class="btn btn-danger btn-lg" ng-click="deleteTravel(newTravel)" ng-disabled="!newTravel.seats || !newTravel.origin || !newTravel.destination|| !selected">Borrar</button>
+      </form>
+    </div>
+
+    <div class="col-sm-6 col-sm-offset-1">
+		<table class="table table-striped">
+        <tr class="info">
+          <td>Car Owner</td>
+          <td>Origin</td>
+          <td>Destination</td>
+          <td>Seats</td>
+        </tr>
+        <tr ng-repeat="travel in awesomeTravel" ng-click="selectCarOwner(carowner)">
+          <td>{{ carowner.name }}</td>
+          <td>{{ carowner.surname }}</td>
+          <td>{{ carowner.passengers }}</td>
+          <td>{{ carowner.origin }}</td>
+          <td>{{ carowner.destination }}</td>
+          <td>{{ carowner.passengers.length}}</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+</div>
